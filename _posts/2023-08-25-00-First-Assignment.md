@@ -7,9 +7,9 @@ categories: Assignment
 
 ## List of content
 
-- [Project description](Project-description)
-- [What has been done](What-has-been-done)
-- [Detailed project description](Detailed-project-description)
+- [Project description](#project-description)
+- [What has been done](#what-has-been-done)
+- [Detailed project description](#detailed-project-description)
 
 
 
