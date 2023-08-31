@@ -37,8 +37,23 @@ A controller made with a breadboard and 2 joysticks connected to an arudino. Cur
 
 ### Arduino Drone
 
-
+Arduino based drone attatched to a frame that has a integrated circuit of providing the motors with electricity. The drone has a transceiver in which it recives...
 
 <img src="{{ '/assets/images/arduino_drone0.gif' | prepend: site.baseurl | prepend: site.url}}" alt="Arduino Drone" height=400px/>
 
 # Detailed project description
+
+As of now the project has a few problems that needs to fixed in order to continue development. The problems are desyncronized motors and weight.
+
+### Desyncronized motors
+
+Whilst testing the circuit and arduino by powering on the motors it was observed that the motors turned on in response to different output strength. This was further testet by attempting to fly the drone which lead to the drone spinning around before take off.
+
+Possible solution are to deconstruct the drone and troubleshoot each motor individually. If the motors are desynced and this offset does not change, it would be easy to synchronize them in software. If not gyro is required. Worst case solution would be to buy new motors. 
+
+### Weight
+
+When attempting to fly the drone, 70% of max power output was used. The drone did not achieve flight but this could be mainly due to desync between motors. Still an attempt to lighten to load would be beneficial.
+
+A way to lighten the load may be solved by 3D-printing a new drone frame as the current one used is heavier than needed.
+
