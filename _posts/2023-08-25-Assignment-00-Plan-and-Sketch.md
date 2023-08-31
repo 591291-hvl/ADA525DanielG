@@ -32,4 +32,11 @@ Components needed for the project are:
 
 ![Controller](../assets/images/rn_image_picker_lib_temp_f59ba29c-bcf4-4a4f-a681-631da5acc457.JPG)
 
+
+<img src="{{site.ADA525DanielG | prepend: site.url}}assets/Untitled.png" alt="Untitled" />
+
+<!-- OR -->
+
+<img src="{{ '/assets/Untitled.png' | prepend: site.baseurl | prepend: site.url}}" alt="Untitled" />
+
 # Detailed project description
