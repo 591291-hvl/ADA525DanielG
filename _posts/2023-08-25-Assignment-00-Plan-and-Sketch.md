@@ -29,8 +29,16 @@ Components needed for the project are:
 
 # What has been done so far
 
-<img src="{{ '/assets/images/arduino_controller0.jpg' | prepend: site.baseurl | prepend: site.url}}" alt="Untitled" height=200px/>
+### Arduino Controller
 
-<img src="{{ '/assets/images/arduino_drone0.gif' | prepend: site.baseurl | prepend: site.url}}" alt="Untitled" height=200px/>
+A controller made with a breadboard and 2 joysticks connected to an arudino. Currently only sends a single number via a radio transceiver which determines the power output of the drone motors.
+
+<img src="{{ '/assets/images/arduino_controller0.jpg' | prepend: site.baseurl | prepend: site.url}}" alt="Arduino Controller" height=400px/>
+
+### Arduino Drone
+
+
+
+<img src="{{ '/assets/images/arduino_drone0.gif' | prepend: site.baseurl | prepend: site.url}}" alt="Arduino Drone" height=400px/>
 
 # Detailed project description
