@@ -31,4 +31,6 @@ Components needed for the project are:
 
 <img src="{{ '/assets/images/arduino_controller0.jpg' | prepend: site.baseurl | prepend: site.url}}" alt="Untitled" height=200px/>
 
+<img src="{{ '/assets/images/arduino_drone0.gif' | prepend: site.baseurl | prepend: site.url}}" alt="Untitled" height=200px/>
+
 # Detailed project description
