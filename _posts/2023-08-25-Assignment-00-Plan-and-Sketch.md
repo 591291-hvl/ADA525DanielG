@@ -34,5 +34,6 @@ Components needed for the project are:
   Error Message
 </video>
 
+![Controller](/assets/images/rn_image_picker_lib_temp_f59ba29c-bcf4-4a4f-a681-631da5acc457.jpg)
 
 # Detailed project description
