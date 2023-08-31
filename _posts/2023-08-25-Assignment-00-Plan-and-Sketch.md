@@ -30,6 +30,6 @@ Components needed for the project are:
 # What has been done so far
 
 
-![Controller]({{ADA525DanielG}}/assets/images/rn_image_picker_lib_temp_f59ba29c-bcf4-4a4f-a681-631da5acc457.jpg)
+![Controller](./assets/images/rn_image_picker_lib_temp_f59ba29c-bcf4-4a4f-a681-631da5acc457.jpg)
 
 # Detailed project description
