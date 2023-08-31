@@ -29,6 +29,6 @@ Components needed for the project are:
 
 # What has been done so far
 
-<img src="{{ '/assets/images/rn_image_picker_lib_temp_f59ba29c-bcf4-4a4f-a681-631da5acc457.jpg' | prepend: site.baseurl | prepend: site.url}}" alt="Untitled" />
+<img src="{{ '/assets/images/arduino_controller0.jpg' | prepend: site.baseurl | prepend: site.url}}" alt="Untitled" height=200px/>
 
 # Detailed project description
