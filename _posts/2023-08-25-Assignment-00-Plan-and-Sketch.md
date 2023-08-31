@@ -57,3 +57,14 @@ When attempting to fly the drone, 70% of max power output was used. The drone di
 
 A way to lighten the load may be solved by 3D-printing a new drone frame as the current one used is heavier than needed.
 
+### TODO's
+
+After the problems are solved the project would mainly consist of:
+- Arduino casing <br>
+Currently the arduino and breadboard containing the circuit are strapped to the frame using zip ties. A casing would be benificial to both hide the circuit and protect it from weather and high velocity damage.
+- Controller <br>
+Currently the controller is a breadboard with 2 joysticks sticking out of it. Designing a more friendly looking and ergonomic controller would be benificial.
+- Radio communication <br>
+Currently the radio communication is only used for motor power output directly up. No attempts has been made to allow 3-dimensjonal navigation.
+- Gyro/accelerometer <br>
+Currently this component has not been utilized. Auto stabilization is an integral part of drone design.
