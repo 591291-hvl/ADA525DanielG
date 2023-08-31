@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "First assignment"
+title:  "Assignment 00: Plan and Sketch."
 date:   2023-08-25 14:00:00 +0200
 categories: Assignment
 ---
