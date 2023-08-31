@@ -8,7 +8,7 @@ categories: Assignment
 ## List of content
 
 - [Project description](#project-description)
-- [What has been done](#what-has-been-done)
+- [What has been done so far](#what-has-been-done-so-far)
 - [Detailed project description](#detailed-project-description)
 
 
@@ -27,6 +27,8 @@ Components needed for the project are:
 - Drone arduino casing
 - Controller arduino casing
 
-# What has been done
+# What has been done so far
+
+![image](/assets/images/Snapchat-1001826443.mp4)
 
 # Detailed project description
