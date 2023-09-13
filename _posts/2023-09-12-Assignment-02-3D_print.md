@@ -38,3 +38,7 @@ There also were problems with constructing the motor shaft in fusion360. Apparen
 
 
 ### Stand
+
+Since the stand was going to be a pyramid, i started by constructing a square then using the "loft" function to raise it to a point above the square, this results in a pyramid. From then i began digging out space for the motor and arduino, as well as a hole for power supply.
+
+<img src="{{ '/assets/images/stand.gif' | prepend: site.baseurl | prepend: site.url}}" alt="Motor Shaft" height=400px/>
