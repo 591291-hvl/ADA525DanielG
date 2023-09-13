@@ -25,7 +25,7 @@ The individual parts should include a pyramid with space inside for an arduino a
 
 ## Motor Shaft
 
-<img src="{{ '/assets/images/motor_shaft' | prepend: site.baseurl | prepend: site.url}}" alt="Motor Shaft" height=400px/>
+<img src="{{ '/assets/images/motor_shaft.jpg' | prepend: site.baseurl | prepend: site.url}}" alt="Motor Shaft" height=400px/>
 
 Image of the different design iterations of the motor shaft.
 
