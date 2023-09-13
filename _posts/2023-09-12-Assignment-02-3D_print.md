@@ -29,3 +29,4 @@ The individual parts should include a pyramid with space inside for an arduino a
 
 Image of the different design iterations of the motor shaft.
 
+The first few iterations was focused on trying to create a part that fit onto the motor shaft. The shaft has a cog attached to the end which has 10 teeth. The design of this part proved to be a big challenge as i am still not sure how much spacing is required between the gear and the connecting piece. Spacing used in final versions is 0.4mm but i have had prints were i have had to use a knife to make the part fit, while other times it fit too loose. 
