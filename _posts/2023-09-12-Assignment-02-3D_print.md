@@ -7,6 +7,16 @@ categories: Assignment
 
 ## List of content
 
+- [Background](#background)
+- [Design](#design)
+    - [Motor Shaft](#motor-shaft)
+    - [Stand](#stand)
+- [Problems](#problems)
+    - [Analog-Arduino-Output](#analog-arduino-output)
+    - [Voltage-Divider](#voltage-divider)
+    - [Motor-Controller](#motor-controller)
+
+
 
 ## Background 
 
@@ -52,7 +62,7 @@ The inside of the pyramid is modeled so there are slopes lower than 45degrees, t
 
 The main problems i have with the design so far is controlling the speed of the motor. An arduino has a 5v and a 3.3v output which i initially planned to use to power the motor, this ended up being too fast. I have tried 3 different methods so far to controll the speed.
 
-### Analog arduino pin
+### Analog Arduino Output
 
 The first attempt to control the motor speed was done by using arduino analog output pin. Using high values(close to 1024) the motor worked like normal(high speed). When using lower values the motor would emit a beeping noise and not rotate.
 
@@ -70,4 +80,9 @@ Image above is my attempt at construcing the circuit with electrical tape.
 
 ### Motor controller
 
-This method is similar to ((ANALOG ARDUINO PIN))...
+<img src="{{ '/assets/images/motor_controller.jpg' | prepend: site.baseurl | prepend: site.url}}" alt="Motor  Controller" height=400px/>
+
+The circuit above aims to use a potentiometer to control the motor speed.
+
+
+<img src="{{ '/assets/images/motor_controller2.jpg' | prepend: site.baseurl | prepend: site.url}}" alt="Motor  Controller" height=400px/>
