@@ -46,7 +46,7 @@ The part that is supposed to hold the cube also went through multiple iterations
 The cup for the cube also needed multiple iterations as the cube would fall out when rotating. In the end i ended up adding holes into the cup so as backup i could zip tie the cube in place.
 
 ROTATION
-There also were problems with constructing the motor shaft in fusion360. Apparently rotating a cubic object to face pointy side up is not a 45degree rotation in 2 axis. The rotations was told should work are x = 145, y = 0, z = 45 but i ended up with x=45, y=325, z=0. So the solution i came up with is just to add 90 to 55 until its correct. Mathematically it should be arctan(1/sqrt(2)) which is 35.264. 90-55 is 35, so if 55 does not work try 35.264.
+There also were problems with constructing the motor shaft in fusion360. Apparently rotating a cubic object to face pointy side up is not a 45degree rotation in 2 axis. The rotations i was told should work are x = 145, y = 0, z = 45 but i ended up with x=45, y=325, z=0. So the solution i came up with is just to add 90 to 55 until its correct. Mathematically it should be arctan(1/sqrt(2)) which is 35.264. 90-55 is 35, so if 55 does not work try 35.264.
 
 
 ### Stand
