@@ -82,7 +82,7 @@ Image above is my attempt at construcing the circuit with electrical tape.
 
 <img src="{{ '/assets/images/motor_controller.jpg' | prepend: site.baseurl | prepend: site.url}}" alt="Motor  Controller" height=400px/>
 
-The circuit above aims to use a potentiometer to control the motor speed.
+The circuit above aims to use a potentiometer to control the motor speed. I attempted to construct it by replacing the 9v power source with 4 1.5v batteries combined in series, which adds up to 6v. This kinda worked, it was able to reduce the speed of which to motor was spinning at, but it is still too fast for the intended use.
 
 
 <img src="{{ '/assets/images/motor_controller2.jpg' | prepend: site.baseurl | prepend: site.url}}" alt="Motor  Controller" height=400px/>
