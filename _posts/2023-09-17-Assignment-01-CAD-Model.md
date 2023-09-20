@@ -37,7 +37,7 @@ The screw holes in the controller i originaly made was 3mm. This was before i kn
 
 The result i ended up with is this:
 
-<img src="{{ '/assets/images/arduino_controller2.jpg' | prepend: site.baseurl | prepend: site.url}}" alt="Arduino Controller" height=400px/>
+<img src="{{ '/assets/images/arduino_controller3.jpg' | prepend: site.baseurl | prepend: site.url}}" alt="Arduino Controller" height=400px/>
 
 ## Future work
 
