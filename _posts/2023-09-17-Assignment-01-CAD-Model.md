@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Assignment 01: CAD Model"
+title:  "Assignment 01: Make a CAD model of your final project"
 date:   2023-09-17 14:00:00 +0200
 categories: Assignment
 ---
