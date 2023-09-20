@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Assignment 02: 3D print."
-date:   2023-08-25 14:00:00 +0200
+date:   2023-09-18 14:00:00 +0200
 categories: Assignment
 ---
 
