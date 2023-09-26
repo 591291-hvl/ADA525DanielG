@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Assignment 03: Laser cut a box with finger joints"
-date:   2023-09-28 14:00:00 +0200
+date:   2023-09-26 14:00:00 +0200
 categories: Assignment
 --- 
 
