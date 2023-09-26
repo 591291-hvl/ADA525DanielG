@@ -32,5 +32,8 @@ Joint lenght = 3.75mm
 
 The laser cutter removes 0.025mm from both sides so if the joint intersections are 3.70mm just enough material should be removed in order to create a perfect fit.
 
+The end design looks like this. The design does not include the corners of the cube, but it should be completely sealed.
+
+<img src="{{ '/assets/images/lasercut_box.png' | prepend: site.baseurl | prepend: site.url}}" alt="LAsercut Box" height=400px/>
 
 ## Result
