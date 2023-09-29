@@ -37,3 +37,7 @@ The end design looks like this. The design does not include the corners of the c
 <img src="{{ '/assets/images/lasercut_box.png' | prepend: site.baseurl | prepend: site.url}}" alt="LAsercut Box" height=400px/>
 
 ## Result
+
+<img src="{{ '/assets/images/finger_joint_cube.jpg' | prepend: site.baseurl | prepend: site.url}}" alt="Finger Joint Cube" height=400px/>
+
+The TA in question reglected to mention that he discovered that the keft size accualy was 0.01mm and not 0.025mm. Even though i talked to him about the keft before designing the cube. He only mention the discovery after we tried to assemble the cube and found out that i desinged it with wrong keft size. 
