@@ -46,19 +46,32 @@ When i received the circuit board i realized that the holes for the components i
 
 <img src="{{ '/assets/images/controller_circuit_board.gif' | prepend: site.baseurl | prepend: site.url}}" alt="Controller Circuit Board" height=400px/>
 
-Now that i had working electronics i then needed to fit everything inside some sort of container. Since i already had a design i only needed to make small adjustments. I expanded the inside just enough so the circuit board does not jiggle inside. Created enough height inside for the wires. Made sure the powercord hole was in the right posistion. Created a hole for the radio transceiver.
+Now that i had working electronics i then needed to fit everything inside some sort of container. Since i already had a design i only needed to make small adjustments. I expanded the inside just enough so the circuit board does not jiggle inside. Created enough height inside for the wires. Made sure the powercord hole was in the right posistion. Created a hole for the radio transceiver. The image below is how the controller looks like in fusion 360.
 
 <img src="{{ '/assets/images/controller_sketchv2.png' | prepend: site.baseurl | prepend: site.url}}" alt="Controller Sketch v2" height=400px/>
+
+The underside of the joystick component is uneven with pins solderd on. Therefore i up creating support rings for the joysticks in hopes that it would be more even.
 
 ## Result
 
 <img src="{{ '/assets/images/controller.gif' | prepend: site.baseurl | prepend: site.url}}" alt="Controller" height=400px/>
 
+The result i ended up with is a functional non-ergonomic joystick radio controller. Since the controller is programmable it could in reality be used for almost anything.
+
 ## Discussion
+
+I have previously experienced joystick value drift when testing the joysticks. Ideally i should have included a button that can be used to reset the joysticks, or a way to restart the controller. By experimenting with this prototype i should be able to determine if this is necessary.
+
+When shaking the controller the only movable part is the radio transceiver. So i succeeded in making the box just small enough for the cicuit board, but i failed to lock the radio in place. I am still not sure what the best solution would be to solve this. I have shields for the radio, but there is still no good way to attach this to anything. I could always make a container thats an exact fit and then secure the box to something, but i think i am more inclined to try to solder the radio directly onto the board. The radio antena would stick awkwardly out the box either way.
+
+The controller is not very ergonomic, and making smooth shapes is something i want to learn so this should be fixed. The easiest solution i see is to import the controller into blender and then create handles. Although this would work really well, i think i want to design handles i can attach and detach. My teacher has said multiple times that he want someone to experiment with organic shapes in fusion, so i might end up doing that.
+
 
 ## What am i missing
 
 ## Next step for the final project
+
+The next step for my final project is use the controller prototype to develop the drone. The drone has gyro and accelerometer which i have little to no experience with. I also need to design a circuit board and a container that protects electronics.
 
 
 - What is it made from? What does it do? How do we interact with it?
