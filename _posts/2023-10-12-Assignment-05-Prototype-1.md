@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Assignment 05: Final Project - Prototype 1"
-date:   2023-12-24 14:00:00 +0200
+date:   2023-10-12 14:00:00 +0200
 categories: Assignment
 --- 
 
