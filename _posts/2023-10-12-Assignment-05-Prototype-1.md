@@ -10,6 +10,8 @@ categories: Assignment
 - [Background](#background)
 - [Design process](#design-process)
 - [Result](#result)
+- [Discussion](#discussion)
+- [Next step for the final project](#next-step-for-the-final-project)
 
 
 ## Background
@@ -66,26 +68,11 @@ When shaking the controller the only movable part is the radio transceiver. So i
 
 The controller is not very ergonomic, and making smooth shapes is something i want to learn so this should be fixed. The easiest solution i see is to import the controller into blender and then create handles. Although this would work really well, i think i want to design handles i can attach and detach. My teacher has said multiple times that he want someone to experiment with organic shapes in fusion, so i might end up doing that.
 
+Designing circuit boards and actually ordering and receiving them is a really cool thing and something i will continue doing in the future. My design process for electronics will now be to use a breadboard to design the circuit. When the circuit is complete, i will then order a circuit board to compress the circuit. 
 
-## What am i missing
 
 ## Next step for the final project
 
 The next step for my final project is use the controller prototype to develop the drone. The drone has gyro and accelerometer which i have little to no experience with. I also need to design a circuit board and a container that protects electronics.
 
-
-- What is it made from? What does it do? How do we interact with it?
-^Result
-
-- How are these properties represented in your design?
-^???
-
-- Am I targeting the correct fabrication technique? Is there a better way to make this?
-^???
-
-- What did you learn from making this prototype?
-^Discussion?
-
-- What are you missing?
-
-- What are the next steps for your project? What would you like to explore further?
+The goal is still to create a drone with auto stabilization, in order to code the stabilization i might have to develop a system to lock the drones axises so i am able to test stabilization in x and y axis separately. 
