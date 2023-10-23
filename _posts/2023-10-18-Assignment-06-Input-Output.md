@@ -49,6 +49,8 @@ The reason why we need both a gyro and an accelerometer is because both is inacc
 
 //Show how angular system looks like(?)
 
+<img src="{{ '/assets/images/angular_system.gif' | prepend: site.baseurl | prepend: site.url}}" alt="Angular System" height=400px/>
+
 ## Result
 
 //retake video with tape on motors.
