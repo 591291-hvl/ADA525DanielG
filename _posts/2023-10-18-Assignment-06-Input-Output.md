@@ -43,9 +43,11 @@ The reason why we need both a gyro and an accelerometer is because both is inacc
 
 //show math here
 
-$$ p = arctan \frac{A_x}{sqrt{A_y^{2} + A_z^{2}}} $$
+Accelerometer formula for Y-axis:  
+$$ \rho = arctan( \frac{A_x}{\sqrt{A_y^{2} + A_z^{2}}}) $$
 
-$$ = arctan \frac{A_y}{sqrt{A_x^{2} + A_z^{2}}} $$
+Accelerometer formula for X-axis:  
+$$ \phi = arctan( \frac{A_y}{\sqrt{A_x^{2} + A_z^{2}}}) $$
 
 //Show how angular system looks like(?)
 
