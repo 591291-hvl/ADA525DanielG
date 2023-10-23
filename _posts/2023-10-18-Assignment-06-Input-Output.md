@@ -43,13 +43,15 @@ The reason why we need both a gyro and an accelerometer is because both is inacc
 
 //show math here
 
+$$ p = arctan \frac{A_x}{sqrt{A_y^{2} + A_z^{2}}} $$
 
-
-//Show how raw data looks like(?)
+$$ = arctan \frac{A_y}{sqrt{A_x^{2} + A_z^{2}}} $$
 
 //Show how angular system looks like(?)
 
 <img src="{{ '/assets/images/angular_system.gif' | prepend: site.baseurl | prepend: site.url}}" alt="Angular System" height=400px/>
+
+The gyro/accelerometer chip(MPU6050) is mounted on a breadboard. When i move the breadboard, change in rotation is calculated and plotted on the computer. Time is in x-axis whilst rotation is on the y-axis.
 
 ## Result
 
@@ -57,6 +59,7 @@ The reason why we need both a gyro and an accelerometer is because both is inacc
 
 ## Discussion
 
+Remember to keep in mind upper limit for voltage for electrical components. There is a reason a upper limit exists, and apparently it is to prevent it from getting destroyed. I got reminded of this when the MPU6050 chip stopped working. The voltage range for the chip is 2.375V-3.46V and i had been testing it with 5V. Meaning that most likely it got too hot and something got destroyed. 
 
 
 Using a microcontroller to messure movement in 3 dimensions(?). Converting it into an angular system, x and y axis tilt. Using the tilt to turn on motors.
