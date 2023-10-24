@@ -17,8 +17,7 @@ categories: Assignment
 ## Background
 
 
-The goal of this assignment is to use a microcontoller to read something from the world around us and to then use a microcontroller to interact with the very same world. The thing i am building for my final project is a drone, which uses motors to interact with the world. The thing i am going to read is the drone's angular velocity and acceleration. With the use of these measurements the goal is to write a self balancing algorithm to help control the drone. 
-
+The goal of this assignment is to use a microcontoller to read something from the world around us and to then use a microcontroller to interact with the very same world. My final project consists of a controller and a drone. The controller reads force? physical movement? in from of 2 joysticks. This has already been done so for this assignment this wont be the focus. The drone reads angular momentum and acceleration. This data will then be used in a self balancing algorithm that controls motor power. For now i just want som readable data and hopefully be able to turn on the motors with the use of the sensor.
 
 
 ## Sensors
@@ -61,15 +60,16 @@ The gyro/accelerometer chip(MPU6050) is mounted on a breadboard. When i move the
 
 ## Result
 
-//retake video with tape on motors.
 
 <img src="{{ '/assets/images/gyro_test.gif' | prepend: site.baseurl | prepend: site.url}}" alt="Gyro test" height=400px/>
+
+When the breadboard is tilted forward, motors on the front side of the drone turns on. The more tilt the breadboard has the higher power is given to the motors. This also works for right/left and backwards. Right now tilt to power is a linear function which most likely will not be enough to stabilize the drone.
 
 ## Discussion
 
 
-- Remember to keep in mind upper limit for voltage for electrical components. There is a reason a upper limit exists, and apparently it is to prevent it from getting destroyed. I got reminded of this when the MPU6050 chip stopped working. The voltage range for the chip is 2.375V-3.46V and i had been testing it with 5V. Meaning that most likely it got too hot and something got destroyed. 
+- Remember to keep in mind upper limit for voltage for electrical components. There is a reason a upper limit exists, and apparently it is to prevent it from getting destroyed. I got reminded of this when the MPU6050 chip stopped working. The voltage range for the chip is 2.375V-3.46V and i had been testing it with 5V. Meaning that most likely it got too hot and something got destroyed. The day before handing in this assignment i got a new chip and everything worked like it used to, confirming that the chip got destroyed.
 
 - The plan was to attach the sensor on a circuit board and then build and encasing to mount on the drone, but due to time constraints and me burning the sensor this has to wait. So for this demostration the sensor data is being sendt over radio to the drone, and then the motors turn on by 4 different variables for power. The stabilization is not quite done, as the angle to power is currently a linear function but it should most likely be exponential or something of a high degree. If not i imagine it could wobble back and forward and worst case not give enough power to be able to prevent it from flipping.
 
-
+- Reading sensor data from the ground up is actually really complicated. Everything comes in on off signals and you have to convert it into bits. Fortunately for me the open-source community is amazing and nearly everything i need already exists. I used someone else's implementation to convert MPU6050 raw data to usable data saving me alot of time. However, doing this as an exercise in the future sounds like a good way to really gain in depth knowledge of how electrical components communicate. 
