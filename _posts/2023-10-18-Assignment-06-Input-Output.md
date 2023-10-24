@@ -63,6 +63,8 @@ The gyro/accelerometer chip(MPU6050) is mounted on a breadboard. When i move the
 
 //retake video with tape on motors.
 
+<img src="{{ '/assets/images/gyro_test.gif' | prepend: site.baseurl | prepend: site.url}}" alt="Gyro test" height=400px/>
+
 ## Discussion
 
 
