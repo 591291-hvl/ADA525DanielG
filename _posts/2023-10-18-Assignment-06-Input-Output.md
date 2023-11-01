@@ -22,7 +22,7 @@ The goal of this assignment is to use a microcontoller to read something from th
 
 ## Sensors
 
-I wont be giving an in depth explanation of what a gyroscope is as the physics behind it is complicated and out of scope of this assignment. The only thing thats important is that a gyroscope conserves angular momentum given to it, whilst what we are using is an electrical gyroscope which measures angular momentum. For simplisity i will be refering to this as just gyro. The image below shows the axises a gyro measures angular momentum in. 
+I wont be giving an in depth explanation of what a gyroscope is as the physics behind it is complicated and out of scope of this assignment. The only thing thats important is that a gyroscope conserves angular momentum given to it, whilst what we are using is an electrical gyroscope which measures angular momentum. For simplisity i will be refering to this as just gyro. The image below shows the axises a gyro measures angular momentum in.
 
 
 <img src="{{ '/assets/images/gyroscope.png' | prepend: site.baseurl | prepend: site.url}}" alt="Gyroscope" height=400px/>
