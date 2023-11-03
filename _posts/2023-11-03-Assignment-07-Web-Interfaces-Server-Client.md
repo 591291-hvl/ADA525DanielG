@@ -68,7 +68,41 @@ var chart  = new Chart("myChart", {
 ```
 
 
+Now the only thing we need is to get the data, this is done by the fetch method which returns a promise object. A promise is kind of a weird datatype that is best handled with asyncronus programming. A promise is a empty datatype that waits untill it fulfills its promise, by doing this is essentaly blocks the rest of the program from doing anything untill it gets fulfilled. This might be ok for really simple programs but for large programs this should never happen. We can circumvent the blocking by using asyncronous programming with the async tag. By placing an async tag before a function that uses fetch, the rest of the program does not wait for the fetch to get fulfilled and when the fetch gets fulfilled it blocks the kernal and runs the rest of the code inside the function.
 
+What i did was use an async function that does fetch calls to /getData, a function that simulates time by calling itself and waiting, and a function that calls upon the asyn function and pushes the data to an array.
+
+```
+async function getData() {
+    const response = await fetch("/getData");
+    const data = await response.json();
+    return data;
+};
+function pushData () {
+    getData().then(data => {
+    dataArray.push(data.data);
+});
+}
+
+var time = 1;
+function simulateTime(){
+    setTimeout(function(){
+        pushData();
+        labelArray.push((labelArray[labelArray.length - 1]+1));
+        
+        if(dataArray.length > 100){
+            dataArray.shift();
+            labelArray.shift();
+        }
+        chart.update();
+        time++;
+        if(time < 1000){
+            simulateTime();
+        }
+    }, 100)
+}
+simulateTime();
+```
 
 
 
