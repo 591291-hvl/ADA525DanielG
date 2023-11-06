@@ -16,14 +16,14 @@ categories: Assignment
 
 ## Background
 
-After multiple assignments where we have learned about different manufacturing techniques. Ways we interact with the device, and how the device interacts with the world. It is finally time to start learning how to create an IoT-device (Internet of things). For this assignment we are going to experiment with simple get requests and then plot the data we receive. 
+After multiple assignments where we have learned about different manufacturing techniques, Ways the world interacts with the device, and how the device interacts with the world. It is finally time to start learning how to create an IoT-device (Internet of things). For this assignment we are going to experiment with simple get requests and then plot the data we receive. 
 
 # Design process
 
-Since we want to send data from a server to a client we want an open port on a website that sends some data when i receives an get request. This might not be a completely accurate explanation, but this is how i understand it. When you connect your pc to the internet, it only alows communication through "ports". Each port has a function connected to it that handels a specific task and they are universal. Meaning that port 4000 is only used for Diablo II and nothing else. This is good system because it means that when information is sendt to a pc, it does not have to find the correct port. Web pages functions similarly, the /something on a webpage has a function that handels connections. These ports are not universal however, so i can use /getData without any problems.
+Since we want to send data from a server to a client we want an open port on a website that sends some data when it receives an get request. This might not be a completely accurate explanation, but this is how i understand it: When you connect your pc to the internet, it only alows communication through "ports". Each port has a function connected to it that handels a specific task and they are universal. Meaning that port 4000 is only used for Diablo II for every computer and nothing else. This is a good system because it means that when information is sendt to a pc, it does not have to find the correct port, since it know which port is going to(this information is in the package header). Web pages functions similarly, the /something on a webpage has a function that handels connections. These ports are not universal however, each website is free to assign these ports freely, this means i can use /getData without any problems.
 
 
-Since i just want to send some data to display, i use sinus and a incremental variable so i can visualize a sinus curve on the client. This data is then sendt everytime the pathing /getData receives an request.
+Since i just want to send some data to display, i use a sinus function and a incremental variable so i can visualize a sinus curve on the client. This data is then sendt everytime the pathing /getData receives an request.
 
 ```
 var time = 0;
@@ -109,3 +109,8 @@ simulateTime();
 # Result
 
 <img src="{{ '/assets/images/sinus_send_data.gif' | prepend: site.baseurl | prepend: site.url}}" alt="Sending sinus data to webpage" height=400px/>
+
+
+# Discussion
+
+- The incremental variable updates everytime it receives an get request. Mean that if two different clients makes requests at the same time, they would each get half of the data. This could be solved by instead sending post request with last received datapoint so the server knows what to calculate and send back. Even better solution would be to always do the calculation and send current whenever it receives an request. This is how its done with live data tracking like temperature.
