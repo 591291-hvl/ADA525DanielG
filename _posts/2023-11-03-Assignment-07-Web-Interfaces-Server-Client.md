@@ -108,8 +108,4 @@ simulateTime();
 
 # Result
 
-<img src="{{ '/assets/images/sinus_send_data' | prepend: site.baseurl | prepend: site.url}}" alt="Sending sinus data to webpage" height=400px/>
-
-TODO -> Proof read
-
-# Discussion
+<img src="{{ '/assets/images/sinus_send_data.gif' | prepend: site.baseurl | prepend: site.url}}" alt="Sending sinus data to webpage" height=400px/>
