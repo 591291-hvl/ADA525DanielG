@@ -61,12 +61,17 @@ app.get('/getData', (req, res) => {
 });   
 ```
 
+On the client side i did exactly the same as the last assignment but this time i use two arrays to store data. I then used the arrays to plot x and y rotation between -90 degrees and +90 degrees.
 
 
+Because just plotting x and y rotation is boring and there is something really cool you can do with those values i did something extra. Since i have the rotations of the drone, why not try to animate an object to mimic the drone rotations.
 
+For this i ended up just using three.js which was really simple but i could and i would have been more fun to bruteforce it through canvas with xyz cordinates. But since i have allready done something similar i decided not to, https://github.com/591291-hvl/3D-PolarCordinates and https://github.com/591291-hvl/Lorenz-System.
 
 
 
 ## Result
 
 ## Discussion
+
+- Should have made an interface to controll the drone from web
