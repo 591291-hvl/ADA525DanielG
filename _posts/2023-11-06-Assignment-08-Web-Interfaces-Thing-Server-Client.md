@@ -68,10 +68,53 @@ Because just plotting x and y rotation is boring and there is something really c
 
 For this i ended up just using three.js which was really simple but i could and i would have been more fun to bruteforce it through canvas with xyz cordinates. But since i have allready done something similar i decided not to, https://github.com/591291-hvl/3D-PolarCordinates and https://github.com/591291-hvl/Lorenz-System.
 
+Three.js has multiple examples, so i just found an example for a rotating cube. Removed the texture and edited the rotation to be the latest x and y rotation value stored in the array.
 
+Function to initialize the 3D-object.
+
+```
+function init() {
+
+    camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.1, 100 );
+    camera.position.z = 2;
+
+    scene = new THREE.Scene();
+
+    const geometry = new THREE.BoxGeometry();
+    const material = new THREE.MeshBasicMaterial( { color: "ff0000" } );
+
+    mesh = new THREE.Mesh( geometry, material );
+    scene.add( mesh );
+
+    renderer = new THREE.WebGLRenderer( { antialias: true } );
+    renderer.setPixelRatio( window.devicePixelRatio );
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    document.body.appendChild( renderer.domElement );
+
+    window.addEventListener( 'resize', onWindowResize );
+
+}
+```
+
+The rotation function in three.js uses radians for rotations, so i did a simple degree to rad convertion. This code is inside the same function that handles new rotation data and updates the chart.
+
+```
+mesh.rotation.x = (parseInt(xArray[xArray.length - 1])*Math.PI)/180;
+mesh.rotation.z = -(parseInt(yArray[yArray.length - 1])*Math.PI)/180;
+
+renderer.render( scene, camera );
+
+```
 
 ## Result
+
+<img src="{{ '/assets/images/drone_website.gif' | prepend: site.baseurl | prepend: site.url}}" alt="Displaying drone data on a website" height=400px/>
+
+<img src="{{ '/assets/images/drone_website0.gif' | prepend: site.baseurl | prepend: site.url}}" alt="Displaying drone data on a website" height=400px/>
+
 
 ## Discussion
 
 - Should have made an interface to controll the drone from web
+
+- Change cube to be more like a drone
