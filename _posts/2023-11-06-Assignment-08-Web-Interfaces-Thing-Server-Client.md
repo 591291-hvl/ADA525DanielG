@@ -115,6 +115,6 @@ renderer.render( scene, camera );
 
 ## Discussion
 
-- Should have made an interface to controll the drone from web
+- Something that could have been really fun would be to make an interface on the website that controls the drone. I think it could have easily been done by encoding a string with four values corresponding to the four joystick values used to controll the drone. I mostly decide against doing this because i dont see it as a challenge and i dont see it providing any real value to the project as a whole.
 
-- Change cube to be more like a drone
+- The cube displayed on the site should ideally have been modeled to look like the drone. Since i am rotating a mesh of a box, i could create a mesh of the drone. Unfortunately i have not done this yet. The drone frame i am using is from a kit and not designed and 3D-printed. A goal future goal for this project is to design everything my self. So if i end up doing it, i could swap model for the website.
