@@ -112,6 +112,7 @@ renderer.render( scene, camera );
 
 <img src="{{ '/assets/images/drone_website0.gif' | prepend: site.baseurl | prepend: site.url}}" alt="Displaying drone data on a website" height=400px/>
 
+The result is an application that displays rotation in numerical values and shows those values in a much more meanigful way. Sadly i did alot of work with the sensors before this, just guessing what is what. Having this could have made the process slightly easier.
 
 ## Discussion
 
