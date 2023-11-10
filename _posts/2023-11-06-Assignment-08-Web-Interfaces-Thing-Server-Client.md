@@ -21,9 +21,9 @@ This assignment is a continuation of the previous assignment where we created a 
 ## Design process
 
 
-The sensor on the drone(MPU6050) is used to calculate how many degrees the drone is rotated in x and y axis, so the natural thing to display on a website is these values. My initial idea is to just display these values on a graph just like the last assignment but just have 2 instead. This is also something arduino has inbuilt as Serial plotter. 
+The sensor on the drone(MPU6050) is used to calculate how many degrees the drone is rotated in x and y axis, so the natural thing to display on a website is these values. My initial idea is to just display these values on a graph just like the last assignment but just have 2 line plots instead. This is also something arduino has inbuilt as Serial plotter which i have used before. 
 
-Node has a package called serialport.io that is able to open and send/read data on serial ports. I am not sure why but i always thought "serial port" was just some word arduino used but its actually a real port you can see in device manager. Since this is able to read data from serial port, we just need to send data from the arduino on the same serial port. Sending data on serial port is already done, as thats what i use as a console to read data on the arduino. 
+Node has a package called serialport.io that is able to open and send/read data on serial ports. I am not sure why but i always thought "serial port" was just some word arduino used but its actually a real port you can see in device manager. The universal in USB includes this port. Since this is able to read data from serial port, we just need to send data from the arduino on the same serial port. Sending data on serial port is already done, as thats what i use as a console to read values on the arduino. 
 
 The data the arduino sends to serial is on the format:
 "x-angle: x.xx y-angle: x.xx"
@@ -38,7 +38,8 @@ And when i convert the hexadecimals i get:
 
 So there is a small formating task that needs to be handeled here. Four and four characters are read at a time, so i can start building a string by combining them. But then i dont know where the start and end of a message is. When sending messages on bit level you often encode the message header with how many bits to read. Since i am one level above this i can simply use a character to indicate the start of a message. The perfect character for this is already in use, new line or "\n". When you press enter you actually write "\n" and the text editor interpret it as a new line. On the arduino i write "Serial.println()" and then the text inside. The ln part writes a "\n" at the end of the string.
 
-Below is the code for this, there is a bit more string parsing to extract the numerical values from the string.
+
+The code below receives data from serial using serialport.io. There is a bit more string parsing to extract x and y values to store them in variables.
 
 ```
 const serialPort = new SerialPort({ path: 'COM4', baudRate: 9600 })
@@ -53,7 +54,8 @@ serialPort.on('data', function (data) {
 })
 ```
 
-This only works because x_val and y_val is global variables, and when "/getData" gets a get request these values are then sendt. 
+This works great because x_val and y_val are global variables, and when "/getData" gets a request these values are then sendt.
+
 
 ```
 app.get('/getData', (req, res) => {
@@ -64,9 +66,9 @@ app.get('/getData', (req, res) => {
 On the client side i did exactly the same as the last assignment but this time i use two arrays to store data. I then used the arrays to plot x and y rotation between -90 degrees and +90 degrees.
 
 
-Because just plotting x and y rotation is boring and there is something really cool you can do with those values i did something extra. Since i have the rotations of the drone, why not try to animate an object to mimic the drone rotations.
+Because just plotting x and y rotation is boring and there is something really cool you can do with these values i did something extra. Since i have the rotations of the drone, why not try to animate an object to mimic the drone rotations.
 
-For this i ended up just using three.js which was really simple but i could and i would have been more fun to bruteforce it through canvas with xyz cordinates. But since i have allready done something similar i decided not to, https://github.com/591291-hvl/3D-PolarCordinates and https://github.com/591291-hvl/Lorenz-System.
+For this i ended up just using three.js which was really simple but it coudl have been more fun to bruteforce rotations through canvas with xyz cordinates. But since i have already done something similar i decided not to, https://github.com/591291-hvl/3D-PolarCordinates and https://github.com/591291-hvl/Lorenz-System.
 
 Three.js has multiple examples, so i just found an example for a rotating cube. Removed the texture and edited the rotation to be the latest x and y rotation value stored in the array.
 
@@ -112,7 +114,7 @@ renderer.render( scene, camera );
 
 <img src="{{ '/assets/images/drone_website0.gif' | prepend: site.baseurl | prepend: site.url}}" alt="Displaying drone data on a website" height=400px/>
 
-The result is an application that displays rotation in numerical values and shows those values in a much more meanigful way. Sadly i did alot of work with the sensors before this, just guessing what is what. Having this could have made the process slightly easier.
+The result is an application that displays rotation in numerical values and shows those values in a much more meanigful way by visualy showing a rotating object. Sadly i did alot of work with the sensors before this, just guessing what is what. Having this could have made the process slightly easier.
 
 ## Discussion
 
