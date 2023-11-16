@@ -5,9 +5,25 @@ date:   2023-12-24 14:00:00 +0200
 categories: Assignment
 --- 
 
-# Describe the thing
+# Introduction
 
-# ???
+For this project the idea was to build a drone. Of course this is not some new concept, as it is more intended to be a challenge for a person who is coming from a background in computer science. Other than just building a drone I also want to build the controller for it. The reason is that i have more controll of what kind of data is being sendt to the drone. By having two seperate systems i have the option to develop both systems at the same time or to focus on one at the time.
+
+# System Implementation
+
+The drone is a quadcopter, meaning it has 4 motors and 4 propellors. Each motor is connected to a ESC which is then connected to an arduino. The arduino serves as logical controll unit on the drone, and manages every other component. This also includes radio communication with the controller and a sensor(MPU6050) which has a gyro and accelerometer. The arduino takes data from the radio and uses it to controll the drones direction of movement. It also takes data from the sensor and uses it to balance its tilt.
+
+The controller consists of two joysticks and a radio. This system is also using an arduino as its logical controller, so a large part of this project is to get reliable radio communication between two arduinos. The arduino reads the input from the joysticks and then sends them to the drone.
+
+
+# Digital Fabrication
+
+A large part of this project has been done in digital fabrication. This project has alot of electronic parts that needs protection and housing. If one were to breakdown this to its simplest form of abstraction I created two boxes. These boxes however is made so the lid is removable. This was done with "threaded inserts", which is screw holes made out of metal that you insert into 3D printed objects. By doing this you actually solve the biggest problem i have found with 3D printed designs. 3D printing is really bad at any kind of overhang, so bad that common strategy is to print excess plastic that is used for support. This of course is wasteful and takes more time to print... TODO:continue
+
+
+//some plans to use laser cutting to create a test
+
+
 
 
 # CAD Design iterations
@@ -35,7 +51,7 @@ After doing some research, a motor is from my new understanding an electrical fi
 
 Attached video above is of the first real flight with auto stabilization system. As you might notice the test was not perfect, but it did show great potential. Just before this test i implemented a emergency power off button. I had to implement this because if the drone were to flip the motors would rotate based on the tilt and i would have to unplug the battery. This test proved that the system worked perfectly. Another concern was if i had enough lift. Based on the momentum the drone had before i managed to turn off the power i would say the power is sufficient.
 
-
+//PID-regulator
 
 
 
