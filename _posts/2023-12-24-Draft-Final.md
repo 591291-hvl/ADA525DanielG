@@ -16,7 +16,7 @@ The drone is a quadcopter, meaning it has 4 motors and 4 propellors. Each motor 
 The controller consists of two joysticks and a radio. This system is also using an arduino as its logical controller, so a large part of this project is to get reliable radio communication between two arduinos. The arduino reads the input from the joysticks and then sends them to the drone.
 
 
-# Digital Fabrication
+# Digital Fabrication Q1, Q2
 
 //Mention how joysticks are attached on the controller
 
@@ -33,39 +33,66 @@ During the project i strongly considered building a testing rig for drone stabil
 
 # Physical Computing Application Q3, Q4
 
-As mentioned in # Introduction the basis of the project is comunication between two arduinos. In reality any component that is able to computation and has memory could do this task. The reason arduino is my choice for this is because of how easy it is to use. The community around arduino is amazing and there are alot of modules and open souce libraries. The radio module i am using(nRF24L01) has an arduino library that allows me to create an array, and then send the hole datatype in one go. Without this library i would have to go down on the byte level and encode and decode small packets of information. 
+As mentioned in # Introduction the basis of the project is comunication between two arduinos. In reality any component that is able to do computation and has memory could do this task. The reason arduino is my choice for this is because of how easy it is to use. The community around arduino is amazing and there are alot of modules and open souce libraries. The radio module i am using(nRF24L01) has an arduino library that allows me to create an array, and then send the whole object in one go. Without this library i would have to go down on the byte level and encode and decode packets of information. 
 
-The main role the arudino serves is managing how much goes into the motors(actually controlling the ESC's). Using the data recived from the radio on the drone side power output it then given to the motors. Another goal for this project was to have the drone auto level. Without auto level the drone would be prone to flipping. Any external force(wind) on the drone whilst in flight would tilt the drone slightly and it would immediately flip(i think, 99% sure). Therefore i use a sensor(MPU6050), which has a accelerometer and gyro. The arduino should then take the data from this sensor to autonomously adjust power given to the motor to prevent it from flipping, or just keep it at the desired level of tilt.
+The main role the arudino serves is managing how much goes into the motors(actually controlling the ESC's(electronic speed controllers)). Using the data recived from the radio on the drone side, power output is then given to the motors. Another goal for this project was to have the drone auto level. Without auto level the drone would be prone to flipping. Any external force(wind) on the drone whilst in flight would tilt the drone slightly and it would immediately flip(i think, 99% sure). Therefore i use a sensor(MPU6050), which has a accelerometer and gyro. The arduino should then take the data from this sensor to autonomously adjust power given to the motor to prevent it from flipping, or just keep it at the desired level of tilt.
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     TODO v EXPAND THIS PART!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 The system on the controller is really simple since there is just an arduino that sends joystick data to the other arduino through radio.
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
 
-Something that is really important when designing this kind of system is making sure everything operates smoothly and everything is responsive. How an arduino executes code is by running a function called loop on repeat, everything that is executed more than once is inside this function. Therefore it is important to make sure nothing is blocking or taking too much computing time. A common practice on an arduino when you want to limit how often something happens is by blocking the CPU by making it wait. This is fine when there is only one component running, but on the drone there are 3 seperate parts working together(MPU, Radio, Motors). The MPU(gyro and accelerometer sensor) is really important and needs to sample data as often as possible, if possible the sample rate should be maximized and other not so important parts should limited. The MPU output is directly affecting the motors, if motors are limited then there might occour a delay in the stabilization and it would work suboptimal. The radio however is not so important, it only affects how responsive the drone seems, but as long its not limited too much it should not be noticable. The limiting is done by checking current time each loop, if current time is larger than last time the radio code was executed and interval then radio can run once. This interval can be changed if the controlles does not seems responsive enough. 
+Something that is really important when designing this kind of system is making sure everything operates smoothly and everything is responsive. How an arduino executes code is by running a function called loop on repeat, everything that is executed more than once is inside this function. Therefore it is important to make sure nothing is blocking or taking too much computing time. A common practice on an arduino when you want to limit how often something happens is by blocking the CPU by making it wait. This is fine when there is only one component running, but on the drone there are 3 seperate parts working together(MPU, Radio, Motors). The MPU(gyro and accelerometer sensor) is really important and needs to sample data as often as possible, if possible the sample rate should be maximized and other not so important parts should limited. The MPU output is directly affecting the motors, if motors are limited then there might occour a delay in the stabilization and it would work suboptimal. The radio however is not so important, it only affects how responsive the drone seems, but as long its not limited too much it should not be noticable for humans. The limiting is done by checking current time each loop, if current time is larger than last time the radio code was executed and interval then radio can run once. This interval can be changed if the controllers does not seems responsive enough. 
 
-To actually fly the drone it obviously needs to be powered. During its development the arduino was powered through usb, and the motors was powered through a stationary power supply. The usb connection is how code is uploaded to the arduino and used for plotting data through serial print. Stationary power supply is helpful as you can set how much volts that is being sendt and you can see how much amps the system draws. When flying the drone, this needs to be changed. The input pin on the arduino(vin) has a recommended range of 7 to 12 volts, whilst the motors require higher voltage to operate optimal. Therefore a step down voltage regulator was used. I should probably know exactly how this works, but it was really easy to use and i have almost no pior electrical knowledge. To use it, I attached input and output wires. The output voltage was tuned by checking with a voltmeter and turning a knob.
-
-
-- Q3. Describe how you incorporated physical computing elements (using Arduinos, sensors, actuators) into your system. What was the rationale behind your choices?
-->
-
-- Q4. Discuss the data sampling and control mechanisms you implemented. How did these enhance the functionality of your prototype?
+To actually fly the drone it obviously needs to be powered. During its development the arduino was powered through usb, and the motors was powered through a stationary power supply. The usb connection is how code is uploaded to the arduino and used for plotting data through serial print. Stationary power supply is helpful as you can set how much volts that is being sendt and you can see how much amps the system draws. When flying the drone, this needs to be changed. The input pin on the arduino(vin) has a recommended range of 7 to 12 volts, whilst the motors require higher voltage to operate optimal. Therefore a step down voltage regulator(buck converter) was used. I should probably know exactly how this works, but it was really easy to use and i have almost no pior electrical knowledge. To use it, I attached input and output wires. The output voltage was tuned by checking with a voltmeter and turning a knob. TODO: EXPAND THIS
 
 
 # Interaction Design Q5, Q6
 
-- Q5. Explain how you developed the user interface for your system. Does it use a web interface, a mobile app, or a physical interface? What are the advantages of your choice?
+Every controll device for a drone i have seen uses some kind of joysticks. Some drones are controlled via a phone app, and they use touch screen based joysticks. There is a good reason why joysticks are used. I would say the biggest reason i decided to order joysticks rather than just use buttons that i already had many of, was because they are intuitive, easy to use, and has many different values that can be used. Having something that outputs a range of numerical values as opposed to only binary values is beneficial when the motor input values also is a range of numerical values. Also when letting go of the joysticks they return to its orignial position(original value) which mean you dont have to think about implementing a toggle system you would have to do with buttons. A joystick has 5 usable values and two of the values are an inverse of two of the other values, just like on a drone. You can not steer a drone left and right at the same time, and same with forwards and backwards.
+
+This course has had focus on interacting with our device through internet(internet of things device(IoT device)), but if i were to do this then it would be the same as just using buttons. Probably the most ideal configuration for controlling the drone through web would be with WASD and arrow buttons. By doing this i would not have the advantages of using joysticks. Another alternative would be to develop a phone app, then i would have the advantage of joysticks. The reason why i have not done this is because apps are out of the scope of the course and i have no prio experience with app development. Having a phone app is acctualy more advantageous than the current system. If i where to attach a camera on the drone, then i would already have a screen to display the video feed. The would also be more easy to use as currently i need to connect the controller to a pc, with an app i only need my phone and the drone.
+
+Actually developing the user interface was a bit challenging prior to this course. The joystick i was using was branded as an arduino module but there was no clear easy way to make them non free standing. Prio to this course my solution was to just plug them directly in a breadboard, but as you can see from attached picture this was not ideal. In retrospect what i should have done was to just attach them to a piece of cardboard or similar. When i first learned about 3D-printing as a fabrication method i quickly printed a flat rectangle and used screws and bolts to attach them. The final design is really similar but now the rectangle is a lid for the controller box.
+
+//image of controller before and after
 
 - Q6. Illustrate the interaction flow and feedback mechanisms in your system. How does this interface facilitate user interaction?
 
+//Drawing on ipad
+^This system facilitate user interaction by having...
+
 # System evaluation Q7, Q8
 
+// TODO: Expand this part
+// TODO: Alot of this does not make any sense
+// Joysticks are also sensors
+// Also i am not answering any question what so ever
+// DOES NOT ANSWER INTERPLAY AND SYNERGY
+
+As mentioned the module about digital fabrication was mainly used as housing and forcing a structure for electrical components. Ideally this part should have played a larger part of the project. The drone frame was not designed but rather bought online. If not limited on time then the frame should also have been 3D-printed using. The design of the drone frame should then have been designed using generative design. By applying structural constraints the drone model could then have been generated. Since there was a time limit, most of the focus for this module has been used secure electronics. Small holes allows for wires to go out of the box(wire to ESC), and exact fit has been made to secure circuit boards and arduinos. Digital fabrication of PCB's(printed circuit boards) has played the largest part in reducing the space usage of the electronics and making the circuit somewhat comprehandable.
+
+The module physical computing mainly consist of how the electrical components(MPU, motors, and radio) interact with the arduino. As mentioned the arduino is the logical computation component that handles input and output between from the other components. It takes sensor data from the MPU component and turns on actuators(motors)... TODO: EXPAND
+
+
+// TODO: INTERACTION
+
+
+By employing different computational tools and techniques it allowed my workflow to be incredibly dynamic. Whilst building the electronics for the project, i iteratively changed the CAD model to fit the changes i made to the electronics. If i miscalculated something i could quickly change the CAD design and reprint the part(drill a hole in the original model first whilst i wait for the print to finish). If something was done incorrectly with the electronics i could quickly change the model in KiCad(ended up breaking a wire cutter whilst attempting to reduce the size of the circuit board. I also ended up using tape to attach parts to a faulty made circuit board, and use hotfix soldering solutions). All this made it so whilst i worked on the project i was not stuck in one module trying to get something to work, i was actually using everything at once. It also allowed me to have a deeper insight to what every part of the design was doing, which i think made this project easier than it should have been. I imagine if i just focused on one module at the time i would have difficulty trying to get everything to work together in the end. Thats atlest the impression i got when talking to other people in my class. Some people were so focused on just the CAD design that the rest of the system is not yet working in the last weeks of the semester.
+
+
+
 - Q7. How did you integrate the three modules (Digital Fabrication, Physical Computing, and Interaction) in your project? Discuss the interplay and synergy between these components in your prototype.
+-> Digital fabrication was mainly used as housing
+-> Physical computing, important whole design?
+-> interaction, also important??????
 
 - Q8. Reflect on the multidisciplinary nature of your project. How did the combination of different computational tools and techniques influence your design approach and final outcome?
 
+
 # Discussion Q9, Q10, Q11
+
+
 
 - Q9. What unique problem does your system address? Explain the innovative aspects of your design.
 -> not innovative but its kinda modular since i created the system i can modify it as much i would like(add more things)
@@ -74,13 +101,14 @@ To actually fly the drone it obviously needs to be powered. During its developme
 ->stationary power source is really good, multimeter is useful
 
 - Q11. Critically evaluate your system. What are its strengths and limitations?
+-> For a drone, this is a very crude and rough design of what you can buy for very cheap. Main use for a drone is aerial pictures, which this design is not yet able to do. Currently if one wanted to film something you would have to attach a phone to the drone and then fly it. The positive with this is that you do not require a licence to fly it(i think) since it does not have a camere. Since it is self-made and open-source, implementing a camera could be done without too much trouble.
 
 # Conclusion and Future Work Q12
 
 - Q12. Propose potential improvements or future developments for your project. How would you advance the project further with more time or resources?
 -> Better auto stabilization, testing rig, 3d print everything, gps for auto return, live camera feed
 
-# Testing of auto stabilization system Q9?
+# Testing of auto stabilization system Q10?
 
 After the processing of raw sensor data what i end up with is tilt in x and y axis. From this i created a system with 4 variables, positive and negative xy. This means that power of front right motor would be determined by positive x and postive y variables. The tilt to power converter most likely needs to be a non linear function, but for simple testing it is linear. The reason why i think it should not be linear is because i assume the higher tilt the drone has the more power it should give to correct the tilt. A linear function works for this of course, but i am not sure the rate in change is enough. Therefore i want to end up with an exponential function, but all this is something i will find out whilst testing. Right now i multiply tilt in degrees with 15. The power range i am using for the motors are 0 to 1000. Meaning a tilt of 66 degrees would result in max power output. The tilt would not alone reach the max because some of the power would be required to keep the drone of the ground. If it was a seperate power output, then i would have 45 degrees give max power output. Right now i dont know what the minimum for lift is, so this should be enough for testing.
 
